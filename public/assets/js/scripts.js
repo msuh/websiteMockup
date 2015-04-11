@@ -26,8 +26,8 @@ jQuery(document).ready(function() {
         Background slideshow
     */
     $('.top-content').backstretch("assets/img/backgrounds/2_Opac0.45.png");
-    // $('.how-it-works-container').backstretch("assets/img/backgrounds/1.jpg");
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
+    $('.earlyAccess-container').backstretch("assets/img/backgrounds/2_Opac0.45.png");
     // $('.testimonials-container').backstretch("assets/img/backgrounds/1.jpg");
     
     $('#top-navbar-1').on('shown.bs.collapse', function(){
