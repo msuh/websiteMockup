@@ -25,9 +25,9 @@ jQuery(document).ready(function() {
     /*
         Background slideshow
     */
-    $('.top-content').backstretch("assets/img/backgrounds/2_Opac0.45.png");
+    $('.top-content').backstretch("assets/img/backgrounds/2_Opac45HD.png");
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
-    $('.earlyAccess-container').backstretch("assets/img/backgrounds/2_Opac0.45.png");
+    $('.earlyAccess-container').backstretch("assets/img/backgrounds/2_Opac45HD.png");
     // $('.testimonials-container').backstretch("assets/img/backgrounds/1.jpg");
     
     $('#top-navbar-1').on('shown.bs.collapse', function(){
@@ -46,6 +46,16 @@ jQuery(document).ready(function() {
     */
     new WOW().init();
     
+    /*
+		About-us popup
+	*/
+	$(".about-us-photo").on('mouseover', function(){
+		$(this).parent().find('.div_bio').css("display", "block");
+	});
+	$(".about-us-photo").on('mouseleave', function(){
+		$(this).parent().find('.div_bio').css("display", "none");
+	});
+
 	/*
 	    Modals
 	*/

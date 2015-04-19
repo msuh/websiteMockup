@@ -1,3 +1,4 @@
+/*original green: #669966*/
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -11,7 +12,7 @@ body {
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {
-	color: #2ca464;
+	color: #669966;
 	text-decoration: none;
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
@@ -38,10 +39,10 @@ img { max-width: 100%; }
 	line-height: 32px;
 }
 
-.blue { color: #2ca464; }
+.blue { color: #669966; }
 
-::-moz-selection { background: #2ca464; color: #fff; text-shadow: none; }
-::selection { background: #2ca464; color: #fff; text-shadow: none; }
+::-moz-selection { background: #669966; color: #fff; text-shadow: none; }
+::selection { background: #669966; color: #fff; text-shadow: none; }
 
 
 /***** Loader *****/
@@ -117,14 +118,14 @@ img { max-width: 100%; }
 	height: 50px;
 	margin: 0 5px;
 	padding: 16px 20px 0 20px;
-	background: #2ca464;
+	background: #669966;
 	font-size: 16px;
     font-weight: 300;
     line-height: 16px;
     color: #fff;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
 }
-.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
+/*.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }*/
 
 .btn-link-1:before {
 	content: "";
@@ -149,8 +150,8 @@ img { max-width: 100%; }
     color: #fff;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
 }
-.btn-link-2:hover, .btn-link-2:focus, 
-.btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }
+/*.btn-link-2:hover, .btn-link-2:focus, */
+/*.btn-link-2:active, .btn-link-2:active:focus { outline: 0; opacity: 0.6; background: rgba(0, 0, 0, 0.3); color: #fff; }*/
 
 
 /***** Divider *****/
@@ -224,9 +225,7 @@ img { max-width: 100%; }
 /********** Setters *************/
 .button-lightBlue{
 	background-color: #9fc5e7;
-	height: 40px;
-	line-height: 40px;
-	padding:0 20px;
+	padding:5 20px;
 	font-size:15px;
 	color: white;
 	border-radius: 5px;
@@ -234,7 +233,9 @@ img { max-width: 100%; }
 	cursor: pointer;
 	transition: all .3s;
 }
-
+form button.btn:hover{
+	opacity: 1;
+}
 
 /***** Top menu *****/
 
@@ -439,6 +440,9 @@ ul.navbar-nav {
 	margin:20px;
 	margin-top:60px;
 	margin-left:15%;
+	padding:3px;
+	padding-top: 10px;
+	line-height: 25px;
 }
 
 /***** About us (original) *****/
@@ -453,6 +457,13 @@ ul.navbar-nav {
 	padding-bottom: 15px;
 }
 
+.about-us-container .coreTeam .about-us-box{
+	z-index: -100;
+}
+.coreTeam > p{
+	margin-top:30px;
+	margin-bottom: 0px;
+}
 .about-us-box .about-us-photo {
 	position: relative;
 	width: 160px;
@@ -482,7 +493,18 @@ ul.navbar-nav {
 }
 
 .about-us-box .about-us-social a { color: #ddd; }
-.about-us-box .about-us-social a:hover, .about-us-box .about-us-social a:focus { color: #2ca464; }
+.about-us-box .about-us-social a:hover, .about-us-box .about-us-social a:focus { color: #669966; }
+
+.div_bio{
+	display:none;
+	position: absolute;
+	background-color: #eeeeee;
+	z-index: 100;
+	margin: 10px;
+	border: 1px solid #dddddd;
+	line-height: 23px;
+	padding:10px;
+}
 
 /***** Team (old name - About us) *****/
 
@@ -537,18 +559,16 @@ ul.navbar-nav {
 	min-width:200px;
 	height: 60px;
 }
-#div_becomePartner:hover{
-	opacity: .5;
-}
+
 #div_becomePartner p{
 	padding-top:10px;
 	line-height: 20px;
 }
 
 .img_partners{
-	height: 100px;
-	width: 100px;
-	border: 2px solid #9fc5e7;
+	height: 80px;
+	width: 80px;
+	/*border: 2px solid #9fc5e7;*/
 	margin:40px;
 }
 /***** early access *****/
