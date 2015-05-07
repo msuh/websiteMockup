@@ -9,14 +9,15 @@
         <title>Kyper</title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">        
+    <!--     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"> -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/typicons/typicons.min.css">
         <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
 		<link rel="stylesheet" href="assets/css/form-elements.css">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/media-queries.css">
+        <!-- <link rel="stylesheet" href="assets/css/media-queries.css"> -->
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,16 +27,35 @@
         <![endif]-->
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="icon" type="image/png" href="assets/favicon/favicon_kyper.png">
+        <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"> -->
+        <!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"> -->
+        <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"> -->
+        <!-- <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"> -->
 
     </head>
 
     <body>
-    
+    	
+    	<div class="success-message">
+    		<p id="success">Success!</p>
+    		<p id="message"> </p>
+    	</div>
+
+    	<div id="div_recommendBox">
+    		<p id="p_exit">X<p>
+			<iframe name="hidden_iframe2" id="hidden_iframe2"
+			style="display:none;" onload="recommendData()"></iframe>
+			<form class="form-inline" action="https://docs.google.com/forms/d/1ytyHm1UadjMhiawpy4y14JhHIskjT4yekY386tRC0Jw/formResponse?" method="POST" target="hidden_iframe2" onsubmit="googleSubmit()">
+            	<div class="form-group">
+            		<div>
+            		<textarea name="entry.250135512" rows="6" cols="0" id="entry_250135512" dir="auto" aria-label="What Data? Which Vendor? <br> Example: corporate events from Wall Street Horizon  "></textarea>
+                	</div>
+               		<button type="submit" class="button-lightBlue" id="signup_button">SUBMIT  </button>
+                </div>
+            </form>
+        </div>
+
         <!-- Loader -->
     	<div class="loader">
     		<div class="loader-img"></div>
@@ -45,7 +65,7 @@
         <div class="top-content">
         	
         	<!-- Top menu -->
-			<nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+			<nav class="navbar navbar-inverse" role="navigation">
 				<div class="container">
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
@@ -55,18 +75,17 @@
 							<span class="icon-bar"></span>
 						</button>
 						<a class="navbar-brand" href="#">
-							<img src="./assets/img/KyperLogo_dark_theme.png" />
+							<img src="./assets/img/KyperLogo_dark_theme_2.png" data-at2x="./assets/img/KyperLogo_dark_theme_2.png" />
 						</a>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="top-navbar-1">
 						<ul class="nav navbar-nav navbar-right">
-							<li><a class="scroll-link" href="#video">Video</a></li>
-							<li><a class="scroll-link" href="#features">Features</a></li>
-							<li><a class="scroll-link" href="#onDemand">Data</a></li>
-							<li><a class="scroll-link" href="#about-us">Team</a></li>
-							<li><a class="scroll-link" href="#partners">Partners</a></li>
-							<!-- <li><a class="btn btn-link-2 scroll-link" href="#pricing">Get it now!</a></li> -->
+							<li><a class="scroll-link" href="#video">VIDEO</a></li>
+							<li><a class="scroll-link" href="#features">FEATURES</a></li>
+							<li><a class="scroll-link" href="#onDemand">DATA</a></li>
+							<li><a class="scroll-link" href="#about-us">TEAM</a></li>
+							<li><a class="scroll-link" href="#partners">PARTNERS</a></li>
 						</ul>
 					</div>
 				</div>
@@ -75,32 +94,28 @@
             <div class="inner-bg">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-7 text">
+                        <div class="col-sm-12 text">
                         	<!-- <div class="main_info"> -->
-                            <h1 class="wow fadeInLeftBig"> We democratize data. <br> You make better decisions. </h1>
+                            <h1 class="wow fadeInLeftBig"> We deliver data. <br> You make better decisions. </h1>
                             <div class="description wow fadeInLeftBig">
                             	<p>
-	                            	Kyper is a single cloud platform that provides all the data<br> and analytical tools you need – whenever and wherever. 
+	                            	<span id="span">Kyper</span> is a cloud-based platform that facilitates <br>comprehensive data exchange and analytics
                             	</p>
                             </div>
                         </div>
-                        <div class="col-sm-3 col-sm-offset-0.5 text">
+                        <div class="col-sm-12 text">
                             <div class="subscribe wow fadeInUp">
-	                			<form class="form-inline" role="form" action="assets/subscribe.php" method="post">
+	                			<iframe name="hidden_iframe" id="hidden_iframe"
+								style="display:none;" onload="googleLoad()"></iframe>
+	                			<form class="form-inline" action="https://docs.google.com/forms/d/1SuFxcc1Fvk-NYPc3xiJ4XbgnxR0tIWlkApSZA41FQjQ/formResponse?" method="POST" target="hidden_iframe" onsubmit="googleSubmit()">
 			                    	<div class="form-group">
-			                    		<div>
-			                    		<label class="sr-only" for="name">Name</label>
-			                        	<input type="text" name="name" placeholder="Name" class="signup form-control" id="signup_name">
-			                        	</div>
-			                        	<div>
-			                        	<label class="sr-only" for="email">Email</label>
-			                        	<input type="text" name="email" placeholder="Email" class="signup form-control" id="signup_email">
-			                        	</div>
-			                       		<button type="submit" class="btn" id="signup_button">Sign Up  </button><small id="small_additionalInfo"> with other 5,566 data scientists </small>
+			                    		<label class="sr-only" for="name">NAME</label>
+			                        	<input type="text" placeholder="NAME" class="signup form-control" name="entry.929396479" id="entry_929396479">
+			                        	<label class="sr-only" for="email">EMAIL</label>
+			                        	<input type="text" placeholder="EMAIL" class="signup form-control" name="entry.10541188" value="" class="ss-q-short valid" id="entry_10541188">
+			                       		<button type="submit" class="button-lightBlue" id="signup_button">SIGN UP  </button>
 			                        </div>
 			                    </form>
-			                    <div class="success-message"></div>
-			                    <div class="error-message"></div>
                             </div>
                         </div>
                     </div>
@@ -114,69 +129,41 @@
 	        <div class="container">
 	        	<div class="row">
 	                <div class="col-sm-12 how-it-works section-description wow fadeIn">
-	                    <h2>Kyper connects the 3 silos of the data industry</h2>
+	                    <h2>Kyper unites data providers and data users</h2>
 	                    <div class="divider-1 wow fadeInUp"><span></span></div>
 	                </div>
 	            </div>
-	                <div class="col-sm-7 features wow videoDetail fadeIn">
-	                    <div class="row">
-	                    	Kyper provides a trust mechanism between data vendors and users:
-			                <div class="col-sm-12 how-it-works wow fadeIn">
-			                	<div class="col-sm-1">
-			                		<div class="div_blueCircle"><p>1</p></div>
-			                	</div>
-			                	<div class="col-sm-11">
-				                    <p>Allows vendors to feel secure about data leakage and control
-									issues. Kyper offers a powerful platform for users to easily
-									access, analyze and share data without the need to
-									download data into their local machines.</p>
-								</div>
-			            	</div>
-			            </div>
-			            <div class="row">
-			                <div class="col-sm-12 how-it-works wow fadeIn">
-			                	<div class="col-sm-1">
-			                		<div class="div_blueCircle"><p>2</p></div>
-			                	</div>
-			                	<div class="col-sm-11">
-				                    <p>Allows data users to quickly analyze data and be able to return
-									data which do not fit into their need. Users can also integrate
-									their own data with APIs from various data sources at a
-									fraction of price they would pay when they acquire data directly
-									from vendors. </p>
-								</div>
-			                </div>
-			            </div>
-			            <div class="row">
-			                <div class="col-sm-12 how-it-works wow fadeIn">
-			                    <div class="col-sm-1">
-			                		<div class="div_blueCircle"><p>3</p></div>
-			                	</div>
-			                	<div class="col-sm-11">
-			                    	<p>Allows different types of data participants be able to share,
-								collaborate and exchange their work, in a data ecosystem
-								that brings efficiency to data industry and disrupt current
-								business models</p>
-								</div>
-			                </div>
-			            </div>
-	                </div>
-	                <div class="col-sm-5 features section-description wow fadeIn">
-	                    <div id="div_relationalGraph">
-	                    	<img src="./assets/img/3silos.png" />
-	                    </div>
+                <div class="row">
+	                <div class="col-sm-12 how-it-works wow fadeIn">
+	                	<div class="col-sm-1">
+	                		<div class="div_blueCircle"><p>1</p></div>
+	                	</div>
+	                	<div class="col-sm-11">
+		                    <p class="paragraphLeft">Data providers can confidently and efficiently deliver content while mitigating data leakage associated with traditional data distribution services.</p>
+						</div>
+	            	</div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-12 how-it-works wow fadeIn">
+	                	<div class="col-sm-1">
+	                		<div class="div_blueCircle"><p>2</p></div>
+	                	</div>
+	                	<div class="col-sm-11">
+		                    <p class="paragraphLeft">Data users can easily access datasets of interest to explore relationships, visualize patterns, and develop algorithms. Users may integrate proprietary data, collaborate with colleagues, and share results.
+		                    </p>
+						</div>
 	                </div>
 	            </div>
-	        	<div class="row">
-	                <div class="col-sm-12 wow fadeIn">
-	                    <iframe src="https://www.youtube.com/v/TU04qPbUs7A"></iframe>
-	                </div>
-	            </div>
-
 	        </div>
+	            <div class="row">
+	        		<video id="video" controls="" preload="none" mediagroup="myVideoGroup" poster="./assets/img/backgrounds/video_background.png" onclick="this.play(); startVideo();" onended="endVideo();" onpause="endVideo();">
+				      <source id="mp4" src="./assets/kyperVideo.mp4" type="video/mp4">
+				      <p>Your user agent does not support the HTML5 Video element.</p>
+				    </video>
+	        	</div>
         </div>
 
-        
+
         <!-- Features -->
         <div class="features-container section-container">
 	        <div class="container">
@@ -201,11 +188,8 @@
 			                	<h3>High quality <br> on-demand data</h3>
 			                </div>
 			            </div>
-	                    <p>Instant access to all high-quality
-						datasets, including financial &
-						novel data from all over the
-						world, cleaned and managed by
-						Kyper</p>
+	                    <p class="paragraphLeft">Instant access to high quality structured and unstructured datasets from respected data providers.
+						</p>
                     </div>
                     <div class="col-sm-4 wow fadeInDown">
                     	<div class="row">
@@ -216,11 +200,8 @@
 			                	<h3>Cloud analytics & visualization </h3>
 			                </div>
 			            </div>
-	                    <p>Perform statistical analysis,
-						entity parser, sentiment analysis,
-						one-command backtest engine
-						and numerous tools on Kyper
-						cloud environment</p>
+	                    <p class="paragraphLeft">Perform statistical analysis, machine learning, natural language processing, and interactive visualizations in Kyper’s cloud environment.
+	                    </p>
                     </div>
                     <div class="col-sm-4 wow fadeInUp">
                     	<div class="row">
@@ -232,11 +213,7 @@
 			                </div>
 			            </div>
 	                    
-	                    <p>Collaborate on the analysis,
-						share results with colleagues
-						and export into beautiful
-						slideshows for presentations
-						-- all in one click</p>
+	                    <p class="paragraphLeft">Share results seamlessly with friends, colleagues, and clients. Stop emailing Excel spreadsheets and use Kyper to collaborate.</p>
                     </div>
                 </div>
 	        </div>
@@ -249,7 +226,7 @@
 	                <div class="col-sm-12 section-description wow fadeIn">
 	                    <h2>On-Demand Data</h2>
 	                    <div class="divider-1 wow fadeInUp"><span></span></div>
-	                    <p>We provide high-quality and wide-coverage data on demand</p>
+	                    <p>Kyper’s data catalog includes everything from traditional financial content to novel big datasets</p>
 	                </div>
 	            </div>
 	            <div class="row">
@@ -257,57 +234,130 @@
                 		<div class="row">
                 			<div class="col-sm-4 onDemandData wow fadeInUp">
                 				<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/market.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/market.png" data-at2x="./assets/img/dataIcon/market.png"/>
 		                			<p>Market</p>
 		                		</div>
 		                		<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/socialMedia.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/socialMedia.png" data-at2x="./assets/img/dataIcon/socialMedia.png"/>
 		                			<p>Social Media</p>
 		                		</div>
 		                		<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/census.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/census.png" data-at2x="./assets/img/dataIcon/census.png"/>
 		                			<p>Census</p>
 		                		</div>
                 			</div>
                 			<div class="col-sm-4 onDemandData wow fadeInUp">
                 				<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/news.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/news.png" data-at2x="./assets/img/dataIcon/news.png"/>
 		                			<p>News</p>
 		                		</div>
 		                		<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/webTraffic.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/webTraffic.png" data-at2x="./assets/img/dataIcon/webTraffic.png"/>
 		                			<p>Web Traffic</p>
 		                		</div>
 		                		<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/weather.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/weather.png" data-at2x="./assets/img/dataIcon/weather.png"/>
 		                			<p>Weather</p>
 		                		</div>
                 			</div>
                 			<div class="col-sm-4 onDemandData wow fadeInUp">
                 				<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/financial.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/financial.png" data-at2x="./assets/img/dataIcon/financial.png"/>
 		                			<p>Financial</p>
 		                		</div>
 		                		<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/realEstate.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/realEstate.png" data-at2x="./assets/img/dataIcon/realEstate.png"/>
 		                			<p>Real Estate</p>
 		                		</div>
 		                		<div>
-		                			<img class="data_icon" src="./assets/img/dataIcon/agriculture.png"/>
+		                			<img class="data_icon" src="./assets/img/dataIcon/agriculture.png" data-at2x="./assets/img/dataIcon/agriculture.png"/>
 		                			<p>Agriculture</p>
 		                		</div>
+                			</div>
+                			<div class="col-sm-12 onDemandData wow">
+                				<p class="andMore"> view more ... </p>
+                				<div id="andMore">
+                					<h3>Item and Providers </h3>
+                					<div class="col-sm-6">
+                						<div class="div_dataItem">
+                							<p>NOAA global weather data</p>
+                							<p>Technical indicators for major markets</p>
+                							<p>Option pricing data for major markets</p>
+                							<p>Factor model data folr US markets</p>
+                							<p>US Census data</p>
+                						</div>
+                						<p class="providerLabel">Kyper</p>
+                					</div>
+                					<div class="col-sm-6">
+                						<div class="div_dataItem">
+                							<p>US equity market tick data</p>
+                							<p>US future market tick data</p>
+                							<p>Europe equity market tick data</p>
+                							<p>Europe future market tick data</p>
+                							<p>Asian market data</p>
+                							<p>AP news database</p>
+                						</div>
+                						<p class="providerLabel">Barchart</p>
+                					</div>
+                					<div class="col-sm-6">
+                						<div class="div_dataItem">
+                							<p>US corporate earning report</p>
+                							<p>US coprate fudementals</p>
+                							<p>US economic indicators</p>
+                							<p>US Corporate events</p>
+                							<p>US corporate rating</p>
+                						</div>
+                						<p class="providerLabel">Wall Street Horizon, MorningStar</p>
+                					</div>
+                					<div class="col-sm-6">
+                						<div class="div_dataItem">
+                							<p>Taiwan equity data</p>
+                							<p>China equity data</p>
+                							<p>Hongkong equity data</p>
+                							<p>Korea equity data</p>
+                							<p>SINGAPORE equity data</p>
+                							<p>MALAYSIA equity data</p>
+                							<p>THAILAND equity data</p>
+                							<p>PHILIPPINES equity data</p>
+                							<p>Japan equity data</p>
+                							<p>Taiwan corporate fundamental data</p>
+                							<p>China corporate fundamental data</p>
+                							<p>Hongkong corporate fundamental data</p>
+                							<p>Korea corporate fundamental data</p>
+                							<p>SINGAPORE corporate fundamental data</p>
+                							<p>MALAYSIA corporate fundamental data</p>
+                							<p>THAILAND corporate fundamental data</p>
+                							<p>PHILIPPINES corporate fundamental data</p>
+                							<p>Japan corporate fundamental data</p>
+                							<p>Taiwan economic indicators</p>
+                							<p>China economic indicators</p>
+                							<p>Hongkong economic indicators</p>
+                							<p>Korea economic indicators</p>
+                							<p>SINGAPORE economic indicators</p>
+                							<p>MALAYSIA economic indicators</p>
+                							<p>THAILAND economic indicators</p>
+                							<p>PHILIPPINES economic indicators</p>
+                							<p>Japan economic indicators</p>
+                							<p>Taiwan mutual fund data</p>
+                							<p>Taiwanbond data</p>
+                						</div>
+                						<p class="providerLabel">TEJ</p>
+                					</div>
+                					</table>
+                				</div>
                 			</div>
 			            </div>
                     </div>
                     <div class="col-sm-6 pricing-box wow fadeInUp">
                 		<div id="div_d3Visualization" >
-						    <object type="text/html" data="https://static.kyper.co/hank.chu/index.html">
+						    <object type="text/html" data="https://static.kyper.co/hank.chu/coffee_heatmap.html">
 						    </object>
-						    <p id="d3Caption">*Each marker indicates the location of a news and the number is the sum of sentiment score in that location*</p>
+						    <p id="d3Caption">Heat-map of Coffee Production</p>
                 		</div>
                 		<div class="button-lightBlue" id="div_recommendData">
-                			<p> Recommand data you are interested in </p>
+                			<p> Recommend data you are interested in </p>
                 		</div>
+                		
                     </div>
 	            </div>
 	        </div>
@@ -319,72 +369,140 @@
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-sm-12 about-us section-description wow fadeIn">
-	                    <h2>About us</h2>
+	                    <h2>Kyper's Team</h2>
 	                    <div class="divider-1 wow fadeInUp"><span></span></div>
+	                    <p>Talented, experienced & proven team players</p>
 	                </div>
 	            </div>
 	            <div class="row">
-	                <div class="col-sm-6 about-us-box wow fadeInUp">
+	                <div class="col-sm-3 about-us-box wow fadeInUp">
 		                <div class="about-us-photo">
-		                	<img src="assets/img/about/1.jpg" alt="" data-at2x="assets/img/about/1.jpg">
+		                	<img>
 		                	<div class="about-us-role">CEO</div>
 		                </div>
 		                <div class="div_bio">
-		                    <h4>Michael Chang</h4>
-		                    <p>Michael received his MS and BS degrees in biomedical engineering from National Taiwan University (NTU) in 2005 and electro-mechanical engineering from National Sun Yet-sen University in 2007, Taiwan, respectively. After he graduated from NTU, Michael joined the Foxconn Inc. While at Foxconn, he solved a common failure problem costing millions of dollars per year. Michael received a Ph.D in electrical engineering and computer science at Massachusetts Institute of Technology in 2011.</p>
+		                    <!-- <h4>Michael Chang</h4> -->
+		                    <p>Michael started his first startup 4 years ago, building one of the early big data asset management funds. He has extensive experience in data science, supply chain management and biomedical instrumentation. His work has been featured on the cover stories on several prestigious journals including Nature Method, Lab-on-Chip and Traders. Michael holds a diploma from NTU, Taiwan and a Ph.D from MIT EECS. </p>
 		                </div>
+		                 <p> Michael Chang </p>
 	                </div>
-	                <div class="col-sm-6 about-us-box wow fadeInDown">
+	                <div class="col-sm-3 about-us-box wow fadeInDown">
 		                <div class="about-us-photo">
-		                	<img src="assets/img/about/2.jpg" alt="" data-at2x="assets/img/about/2.jpg">
+		                	<img>
 		                	<div class="about-us-role">COO</div>
 		                </div>
 		                <div class="div_bio">
-		                    <h4>David Nichtenhauser</h4>
+		                    <!-- <h4>David Nichtenhauser</h4> -->
 		                    <p>David has nearly thirty years’ experience in trading, and portfolio and asset management. He has worked at various banks and hedge funds in Europe and the United States. In 2013, following three years as portfolio manager at the Abu Dhabi Investment Authority, David joined Flyberry Capital, a quantitative hedge fund in Cambridge. He received a BS in Applied Economics at Cornell University in 1986.</p>
 		                </div>
+		                <p> David Nichtenhauser</p>
 	            	</div>
-	        	</div>
-	            <div class="row coreTeam">
-	            	<p>Core Team</p>
-
-	                <div class="col-sm-4 about-us-box">
+	            	<div class="col-sm-3 coreTeam about-us-box wow">
 		                <div class="about-us-photo">
-		                	<img src="assets/img/about/3.jpg" alt="" data-at2x="assets/img/about/3.jpg">
-		                	<div class="about-us-role">Member1</div>
+		                	<img>
+		                	<div class="about-us-role">Lead Backend Engineer</div>
 		                </div>
+		                <p class="p_teamName">Kyle Solan</p>
 	                </div>
-	                <div class="col-sm-4 about-us-box wow fadeInUp">
+	            	<div class="col-sm-3 coreTeam about-us-box">
 		                <div class="about-us-photo">
-		                	<img src="assets/img/about/3.jpg" alt="" data-at2x="assets/img/about/3.jpg">
-		                	<div class="about-us-role">Member2</div>
+		                	<img>
+		                	<div class="about-us-role">Data Development Manager</div>
 		                </div>
+		                <p class="p_teamName">Adam Falls</p>
 	                </div>
-	                <div class="col-sm-4 about-us-box wow fadeInUp">
+				</div>
+	            <div class="row">
+	                <div class="col-sm-3 coreTeam about-us-box wow">
 		                <div class="about-us-photo">
-		                	<img src="assets/img/about/3.jpg" alt="" data-at2x="assets/img/about/3.jpg">
-		                	<div class="about-us-role">Member3</div>
+		                	<img>
+		                	<div class="about-us-role">Senior Software Engineer</div>
 		                </div>
+		                <p class="p_teamName">Itzu Chen</p>
 	                </div>
-	                <div class="col-sm-4 about-us-box">
+	                <div class="col-sm-3 coreTeam about-us-box">
 		                <div class="about-us-photo">
-		                	<img src="assets/img/about/3.jpg" alt="" data-at2x="assets/img/about/3.jpg">
-		                	<div class="about-us-role">Member4</div>
+		                	<img>
+		                	<div class="about-us-role">Software Engineer</div>
 		                </div>
+		                <p class="p_teamName">Ana Ruelas</p>
 	                </div>
-	                <div class="col-sm-4 about-us-box wow fadeInUp">
+	                <div class="col-sm-3 coreTeam about-us-box wow">
 		                <div class="about-us-photo">
-		                	<img src="assets/img/about/3.jpg" alt="" data-at2x="assets/img/about/3.jpg">
-		                	<div class="about-us-role">Member5</div>
+		                	<img>
+		                	<div class="about-us-role">Product Manager</div>
 		                </div>
+		                <p class="p_teamName">Jacqueline Hung</p>
 	                </div>
-	                <div class="col-sm-4 about-us-box wow fadeInUp">
+	                <div class="col-sm-3 coreTeam about-us-box wow">
 		                <div class="about-us-photo">
-		                	<img src="assets/img/about/3.jpg" alt="" data-at2x="assets/img/about/3.jpg">
-		                	<div class="about-us-role">Member6</div>
+		                	<img>
+		                	<div class="about-us-role">Quantitative Analyst</div>
 		                </div>
+		                <p class="p_teamName">Prasanth Varma</p>
 	                </div>
 	            </div>
+	            <div class="row">
+	                <div class="col-sm-3 coreTeam about-us-box">
+		                <div class="about-us-photo">
+		                	<img>
+		                	<div class="about-us-role">Applications Engineer</div>
+		                </div>
+		                <p class="p_teamName">Hank Chu</p>
+	                </div>
+	                <div class="col-sm-3 coreTeam about-us-box wow">
+		                <div class="about-us-photo">
+		                	<img>
+		                	<div class="about-us-role">VP Operations</div>
+		                </div>
+		                <p class="p_teamName">Chih-Wei Chang</p>
+	                </div>
+	                <div class="col-sm-3 coreTeam about-us-box wow">
+		                <div class="about-us-photo">
+		                	<img>
+		                	<div class="about-us-role">Executive Assistant</div>
+		                </div>
+		                <p class="p_teamName">Patricia Skoby</p>
+	                </div>
+	                <!-- Taiwan team -->
+	                <div class="col-sm-3 coreTeam about-us-box wow">
+		                <div class="about-us-photo">
+		                	<img>
+		                	<div class="about-us-role">Director of Operation</div>
+		                </div>
+		                <p class="p_teamName">Alvin Lin</p>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-3 coreTeam about-us-box wow">
+		                <div class="about-us-photo">
+		                	<img>
+		                	<div class="about-us-role">Lead Manager</div>
+		                </div>
+		                <p class="p_teamName">Wu-Sung Peng</p>
+	                </div>
+	                <div class="col-sm-3 coreTeam about-us-box wow">
+		                <div class="about-us-photo">
+		                	<img>
+		                	<div class="about-us-role">Product Manager</div>
+		                </div>
+		                <p class="p_teamName">LC Huang</p>
+	                </div>
+	                <div class="col-sm-3 coreTeam about-us-box wow">
+		                <div class="about-us-photo">
+		                	<img>
+		                	<div class="about-us-role">Project Manager</div>
+		                </div>
+		                <p class="p_teamName">Yi-Kai Lin</p>
+	                </div>
+	                <div class="col-sm-3 coreTeam about-us-box wow">
+		                <div class="about-us-photo">
+		                	<img>
+		                	<div class="about-us-role">Software Engineer</div>
+		                </div>
+		                <p class="p_teamName">Poc Hsu</p>
+	                </div>
+	        	</div>
 	        </div>
         </div>
 
@@ -399,23 +517,26 @@
 	            </div>
 	            <div class="row">
 	                <div class="col-sm-4 wow fadeInUp">
-	                	<div class="row">
-		                	<img class="img_partners" src="./assets/img/dataIcon/clockTime.png">
-		                </div>
-	                	<p>With Kyper, users can quickly evaluate the quality and value of your data through Kyper's analytical and visualization platform within minutes, not weeks</p>
+		                	<img class="img_partners" src="./assets/img/dataIcon/clockTime.png" data-at2x="./assets/img/dataIcon/clockTime.png">
+		                <h3>New distribution channel, <br> new use cases </h3>
+	                	<p class="paragraphLeft">The data science community are leveraging data in ways previously unimagined. Kyper introduces data providers to new markets of sophisticated users.</p>
 	                </div>
 	                <div class="col-sm-4 wow fadeInDown">
-	                	<img class="img_partners" src="./assets/img/dataIcon/userGroup.png">
-	                	<p>We help you to improve sales cycles and conversion - both existing users and another huge group of untapped audience</p>
+	                	<img class="img_partners" src="./assets/img/dataIcon/userGroup.png" data-at2x="./assets/img/dataIcon/userGroup.png">
+	                	<h3>Quick evaluation, <br> quick sales conversions</h3>
+	                	<p class="paragraphLeft">Users can quickly evaluate whether your dataset suits their needs, which leads to shorter, lower-cost sales cycles.</p>
 	                </div>
 	                <div class="col-sm-4 wow fadeInUp">
-	                	<img class="img_partners" src="./assets/img/dataIcon/browser.png">
-	                	<p>Based on user behaviors and analytics on our cloud platform, we can provide you valuable insights on how your data is being used</p>
+	                		<img class="img_partners" src="./assets/img/dataIcon/browser.png" data-at2x="./assets/img/dataIcon/browser.png">
+	                	<h3>Better data management, <br> better insights</h3>
+	                	<p class="paragraphLeft">Vendors can easily manage their data flow, design better data content, and implement flexible pricing structures.</p>
 	                </div>
 	            </div>
 	            <div class="row">
 	            	<div class="button-lightBlue" id="div_becomePartner">
-            			<p> Become our partner <br> and get featured! </p>
+            			<p onClick="parent.location='mailto:contact@kyperdata.com?subject=Interested in Partnering with Kyper'"> Become our partner <br> and get featured! 
+            			</p>
+
             		</div>
 	            </div>
 	        </div>
@@ -428,20 +549,48 @@
 	            <div class="row">
 	                <div class="col-sm-12">
 	                	<h2> Want early access? </h2>
-	                	<form class="subscribe form-inline" role="form" action="assets/subscribe.php" method="post">
-	                    	<div class="form-group">
-	                    		<div>
-	                    		<label class="sr-only" for="name">Name</label>
-	                        	<input type="text" name="name" placeholder="Name" class="signup form-control" id="signup_name">
-	                        	</div>
-	                        	<div>
-	                        	<label class="sr-only" for="email">Email</label>
-	                        	<input type="text" name="email" placeholder="Email" class="signup form-control" id="signup_email">
-	                        	</div>
-	                       		<button type="submit" class="btn" id="signup_button">Sign Up  </button>
-	                        </div>
-	                    </form>
+	                	<div class="subscribe wow fadeInUp">
+	                		<iframe name="hidden_iframe" id="hidden_iframe"
+							style="display:none;" onload="googleLoad()"></iframe>
+                			<form class="form-inline" action="https://docs.google.com/forms/d/1SuFxcc1Fvk-NYPc3xiJ4XbgnxR0tIWlkApSZA41FQjQ/formResponse?" method="POST" target="hidden_iframe" onsubmit="googleSubmit()">
+		                    	<div class="form-group">
+		                    		<div>
+		                    		<label class="sr-only" for="name">NAME</label>
+		                        	<input type="text" placeholder="NAME" class="signup form-control" name="entry.929396479" id="entry_929396479">
+		                        	</div>
+		                        	<div>
+		                        	<label class="sr-only" for="email">EMAIL</label>
+		                        	<input type="text" placeholder="EMAIL" class="signup form-control" name="entry.10541188" value="" class="ss-q-short valid" id="entry_10541188">
+		                        	</div>
+		                        	<div>
+		                        	<label class="sr-only" for="company">COMPANY</label>
+		                        	<input type="text" placeholder="COMPANY" class="signup form-control" name="entry.1222483156" value="" class="ss-q-short" id="entry_1222483156">
+		                        	</div>
+		                       		<button type="submit" class="button-lightBlue" id="signup_button">SIGN UP  </button>
+		                        </div>
+		                    </form>
+                        </div>
 	                </div>
+	            </div>
+	        </div>
+        </div>
+
+       	<!-- Contact Info -->
+        <div class="contact-container section-container section-container-image-bg">
+			<div class="row">
+	            <div class="col-sm-4">
+	            	<p class="contactLabel">Contact</p>
+	            	<p style="margin:0px;">contact@kyperdata.com</p>
+	            	<p>+1 6178557618</p>
+	            </div>
+	            <div class="col-sm-4">
+	            	<p class="contactLabel">Cambridge, MA</p>
+	            	<p>125 Cambridgepark Dr. 3rd floor, <br>Cambridge, MA 02140</p>
+	            </div>
+	            <div class="col-sm-4">
+	            	<p class="contactLabel">Taipei, TW</p>
+	            	<p>No.398, Sec. 1, Keelung Rd. 7th floor, Xinyi Dist., 
+	            	<br>Taipei City 110, Taiwan (ROC)</p>
 	            </div>
 	        </div>
         </div>

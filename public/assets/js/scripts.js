@@ -12,8 +12,36 @@ function scroll_to(clicked_link, nav_height) {
 }
 
 
+function googleLoad(){
+	$('#div_recommendBox').fadeOut();
+	$('#message').html('Thanks for singing up!<br> We will get back to you when ready.');
+	$(".success-message").fadeIn();
+	setTimeout(function(){ $(".success-message").fadeOut(); }, 1500);
+}
+
+function recommendData(){
+	$('#div_recommendBox').fadeOut();
+	$('#message').html('Thanks for your recommendation!');
+	$(".success-message").fadeIn();
+	setTimeout(function(){ $(".success-message").fadeOut(); }, 1500);
+	$('body').find('textarea').val('');
+}
+
+function googleSubmit(){
+	$('body').find('input:text').val('');
+	return;
+}
+
+function startVideo(){
+	$('#video')[0].webkitEnterFullscreen();
+}
+function endVideo(e){
+	console.log("ended Video");
+	$('#video')[0].webkitExitFullscreen();
+	$('#video')[0].src = $('#video')[0].currentSrc;
+
+}
 jQuery(document).ready(function() {
-	
 	/*
 	    Navigation
 	*/
@@ -25,11 +53,11 @@ jQuery(document).ready(function() {
     /*
         Background slideshow
     */
-    $('.top-content').backstretch("assets/img/backgrounds/2_Opac45HD.png");
+    $('.top-content').backstretch("assets/img/backgrounds/3_darker.jpg");
+    // $('.top-content').backstretch("assets/img/backgrounds/2_Opac45HD.png");
     $('.call-to-action-container').backstretch("assets/img/backgrounds/1.jpg");
-    $('.earlyAccess-container').backstretch("assets/img/backgrounds/2_Opac45HD.png");
-    // $('.testimonials-container').backstretch("assets/img/backgrounds/1.jpg");
-    
+    $('.earlyAccess-container').backstretch("assets/img/backgrounds/3_darker.jpg");
+    $('#div_videoImage').backstretch('assets/img/backgrounds/video_background.png');
     $('#top-navbar-1').on('shown.bs.collapse', function(){
     	$('.top-content').backstretch("resize");
     });
@@ -47,6 +75,22 @@ jQuery(document).ready(function() {
     new WOW().init();
     
     /*
+		On-demand data
+	*/
+	$(".andMore").on("click", function(){
+		$("#andMore").toggle();
+	});
+
+	/*
+		Recommend Data
+	*/
+	$('#div_recommendData').on('click', function(){
+		$('#div_recommendBox').fadeIn();
+	});
+	$("#p_exit").on('click', function(){
+		$('#div_recommendBox').fadeOut();
+	});
+    /*
 		About-us popup
 	*/
 	$(".about-us-photo").on('mouseover', function(){
@@ -63,41 +107,23 @@ jQuery(document).ready(function() {
 		e.preventDefault();
 		$( '#' + $(this).data('modal-id') ).modal();
 	});
-	
+
+
 	/*
-	    Subscription form
-	*/	
-	$('.subscribe form').submit(function(e) {
-		e.preventDefault();
-	    var postdata = $('.subscribe form').serialize();
-	    $.ajax({
-	        type: 'POST',
-	        url: 'assets/subscribe.php',
-	        data: postdata,
-	        dataType: 'json',
-	        success: function(json) {
-	            if(json.valid == 0) {
-	                $('.success-message').hide();
-	                $('.error-message').hide();
-	                $('.error-message').html(json.message);
-	                $('.error-message').fadeIn('fast', function(){
-	                	$('.subscribe form').addClass('animated shake').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-	            			$(this).removeClass('animated shake');
-	            		});
-	                });
-	            }
-	            else {
-	                $('.error-message').hide();
-	                $('.success-message').hide();
-	                $('.subscribe form').hide();
-	                $('.success-message').html(json.message);
-	                $('.success-message').fadeIn('fast', function(){
-	                	$('.top-content').backstretch("resize");
-	                });
-	            }
-	        }
-	    });
-	});
+		Set image for each team member
+	*/
+	// var imgPath = 'assets/img/team/', fileType = '.png';
+	// var teamImg = ['michael_chang','david_nichtenhauser','kyle_solan','adam_falls','i-tzu_chen','ana_ruelas',
+	// 			'crop_jaccqueline_hung','crop_prasantha_varma','crop_hank_chu','chih-wei_chang','patricia_skoby',
+	// 			'crop_alvin_lin','crop_wu-sungpeng','crop_lc_huang','crop_yi-kai_lin','crop_poc_hsu'];
+	// var ind = 0;
+	// $('.about-us-photo').each(function(){
+	// 	$(this).find('img').attr("src", imgPath+teamImg[ind]+fileType)
+	// 						.attr("data-at2x",imgPath+teamImg[ind]+fileType);
+
+	// 	ind++;
+	// })
+
 
 });
 
